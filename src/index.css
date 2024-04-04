@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #333;
+}
+
+.parent-div {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.board-title {
+  color: #333;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  background-color: #82828250;
+  height: 80vh;
+  width: 30vw;
+  margin: 0.5em;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.active-column {
+  background-color: #828282;
+  height: 80vh;
+  width: 30vw;
+}
+
+.task-card {
+  font-size: 2rem;
+  background-color: #d6d6d6;
+  padding: 1em;
+  border-radius: 10px;
+  border: 2px solid #828282;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.drop {
+  margin-top: 1px;
+  height: 1px;
+  width: auto;
+  background-color: violet;
+  opacity: 0;
+}
+
+.active-drop {
+  margin-top: 1px;
+  height: 1px;
+  width: auto;
+  background-color: violet;
+  opacity: 1;
+}
+
+.delete {
+  background-color: #828282;
+  height: 2em;
+  width: 5em;
+  border: 3px solid rgb(144, 144, 144);
+}
+
+.active-delete {
+  background-color: red;
+  opacity: 50;
+  height: 2em;
+  width: 5em;
+  border: 3px solid red;
+}
