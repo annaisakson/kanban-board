@@ -5,6 +5,8 @@ const DataContext = createContext({});
 export const DataProvider = ({ children }) => {
   const [cards, setCards] = useState([]);
   const [hasChecked, setHasChecked] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [text, setText] = useState("");
 
   // see if cards have changed and then save to local storage
   useEffect(() => {
@@ -27,6 +29,10 @@ export const DataProvider = ({ children }) => {
         setCards,
         hasChecked,
         setHasChecked,
+        openModal,
+        setOpenModal,
+        text,
+        setText,
       }}
     >
       {children}

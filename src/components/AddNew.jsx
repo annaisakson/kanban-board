@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { format } from "date-fns";
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
 
 const AddNew = ({ column, setCards }) => {
-  const [text, setText] = useState("");
+  const { text, setText } = useContext(DataContext);
   const [adding, setAdding] = useState(false);
 
   const handleSubmit = (e) => {

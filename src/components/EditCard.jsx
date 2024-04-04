@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const EditCard = ({ openModal, closeModal }) => {
+const EditCard = ({ openModal, closeModal, onSave }) => {
   if (!openModal) return null;
+  const { text, setText } = useContext(DataContext);
+  const [editTask, setEditTask] = useState();
+
+  const handleEdit = (e) => {
+    setText(e.target.value);
+  };
 
   const handleSave = () => {
     onSave(editTask);
@@ -24,8 +31,8 @@ const EditCard = ({ openModal, closeModal }) => {
           <textarea
             type="text"
             id="edit-text"
-            value={editTask}
-            onChange={(e) => setEditTask(e.target.value)}
+            value={text}
+            onChange={handleEdit}
             required
           />
           <button type="button" className="submit" onClick={handleSave}>

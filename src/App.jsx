@@ -11,7 +11,6 @@ import DataContext from "./context/DataContext";
 function App() {
   const { cards, setCards } = useContext(DataContext);
   const [openModal, setOpenModal] = useState(false);
-  const [editTask, setEditTask] = useState("");
 
   // // see if cards have changed and then save to local storage
   // useEffect(() => {
@@ -30,11 +29,6 @@ function App() {
   return (
     <>
       <DataProvider>
-        <EditCard
-          openModal={openModal}
-          closeModal={() => setOpenModal(false)}
-          onSave={() => handleSave(setEditTask)}
-        />
         <Router>
           <Routes>
             <Route

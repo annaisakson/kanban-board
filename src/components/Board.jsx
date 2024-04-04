@@ -1,10 +1,11 @@
 import Column from "./Column";
 import Delete from "./Delete";
+import EditCard from "./EditCard";
 import DataContext from "../context/DataContext";
 import { useContext } from "react";
 
-const Board = ({ setOpenModal }) => {
-  const { cards, setCards } = useContext(DataContext);
+const Board = ({}) => {
+  const { cards, setCards, setOpenModal, openModal } = useContext(DataContext);
   return (
     <article className="parent-div">
       <section className="board">
@@ -34,41 +35,9 @@ const Board = ({ setOpenModal }) => {
         />
       </section>
       <Delete setCards={setCards} />{" "}
+      <EditCard openModal={openModal} closeModal={() => setOpenModal(false)} />
     </article>
   );
 };
-
-// const default_cards = [
-//   // TODO
-//   {
-//     task: "vattna blommor",
-//     id: "1",
-//     column: "ToDo",
-//   },
-//   {
-//     task: "cuddla Ben",
-//     id: "2",
-//     column: "ToDo",
-//   },
-//   {
-//     task: "pussa Jake",
-//     id: "3",
-//     column: "ToDo",
-//   },
-
-//   // DOING
-//   {
-//     task: "plugga",
-//     id: "4",
-//     column: "Doing",
-//   },
-
-//   // DONE
-//   {
-//     task: "pleepa",
-//     id: "6",
-//     column: "Done",
-//   },
-// ];
 
 export default Board;
