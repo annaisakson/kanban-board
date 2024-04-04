@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom";
 import Column from "./Column";
 import Delete from "./Delete";
 import { RiArrowGoBackLine } from "react-icons/ri";
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
 
-const TodoPage = ({ cards, setCards }) => {
+const TodoPage = ({}) => {
+  const { cards, setCards } = useContext(DataContext);
   return (
     <article className="parent-div">
       <NavLink to={"/"}>

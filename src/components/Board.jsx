@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
 import Column from "./Column";
 import Delete from "./Delete";
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
 
-const Board = ({ cards, setCards, setOpenModal }) => {
+const Board = ({ setOpenModal }) => {
+  const { cards, setCards } = useContext(DataContext);
   return (
     <article className="parent-div">
       <section className="board">
