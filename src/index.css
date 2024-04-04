@@ -54,6 +54,10 @@ body {
   cursor: -webkit-grab;
 }
 
+.time {
+  font-size: 0.4em;
+}
+
 .drop {
   margin-top: 1px;
   height: 1px;

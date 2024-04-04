@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const EditCard = ({ openModal, closeModal }) => {
   if (!openModal) return null;
 
@@ -14,7 +16,7 @@ const EditCard = ({ openModal, closeModal }) => {
             X
           </button>
           <label htmlFor="edit-text">Edit text</label>
-          <textarea type="" id="edit-text" required />
+          <textarea type="text" id="edit-text" required />
           <button type="submit" className="submit">
             Save
           </button>

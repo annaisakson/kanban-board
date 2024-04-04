@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { format } from "date-fns";
 
 const AddNew = ({ column, setCards }) => {
   const [text, setText] = useState("");
@@ -8,11 +9,13 @@ const AddNew = ({ column, setCards }) => {
     e.preventDefault();
 
     if (!text.trim().length) return;
+    const datetime = format(new Date(), "MMMM dd, yyyy - HH:m");
 
     const newCard = {
       column,
       task: text.trim(),
       id: Math.random().toString(),
+      datetime,
     };
 
     setCards((cards) => [...cards, newCard]);
@@ -35,9 +38,6 @@ const AddNew = ({ column, setCards }) => {
         ></input>
         {adding && (
           <div className="button-container">
-            {/* <button onClick={() => setAdding(false)} className="close-button">
-            Close
-          </button> */}
             <button type="submit" className="add-button">
               Add
             </button>
