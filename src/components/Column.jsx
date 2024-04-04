@@ -4,7 +4,14 @@ import DropIndicator from "./DropIndicator";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Column = ({ title, column, titleColor, cards, setCards }) => {
+const Column = ({
+  title,
+  column,
+  titleColor,
+  cards,
+  setCards,
+  setOpenModal,
+}) => {
   const [active, setActive] = useState(false);
 
   // drag and drop cards
@@ -121,7 +128,14 @@ const Column = ({ title, column, titleColor, cards, setCards }) => {
           <h3 style={{ color: titleColor }}>{title}</h3>
         </NavLink>
         {filteredCards.map((c) => {
-          return <Card key={c.id} {...c} handleDragStart={handleDragStart} />;
+          return (
+            <Card
+              key={c.id}
+              {...c}
+              handleDragStart={handleDragStart}
+              setOpenModal={setOpenModal}
+            />
+          );
         })}
         {column === "ToDo" && <AddNew column={column} setCards={setCards} />}
         <DropIndicator beforeId="null" column={column} />

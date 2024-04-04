@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Column from "./Column";
 import Delete from "./Delete";
 
-const Board = ({ cards, setCards }) => {
+const Board = ({ cards, setCards, setOpenModal }) => {
   return (
     <article className="parent-div">
       <section className="board">
@@ -12,6 +12,7 @@ const Board = ({ cards, setCards }) => {
           titleColor="pink"
           cards={cards}
           setCards={setCards}
+          setOpenModal={setOpenModal}
         />
         <Column
           title="DOING"
@@ -19,6 +20,7 @@ const Board = ({ cards, setCards }) => {
           titleColor="yellow"
           cards={cards}
           setCards={setCards}
+          setOpenModal={setOpenModal}
         />
         <Column
           title="DONE"
@@ -26,6 +28,7 @@ const Board = ({ cards, setCards }) => {
           titleColor="green"
           cards={cards}
           setCards={setCards}
+          setOpenModal={setOpenModal}
         />
       </section>
       <Delete setCards={setCards} />{" "}

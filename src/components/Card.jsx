@@ -1,10 +1,11 @@
 import DropIndicator from "./DropIndicator";
 
-const Card = ({ task, id, column, handleDragStart }) => {
+const Card = ({ task, id, column, handleDragStart, setOpenModal }) => {
   return (
     <>
       <DropIndicator beforeId={id} column={column} />
       <section
+        onClick={() => setOpenModal(true)}
         draggable="true"
         className="task-card"
         onDragStart={(e) => handleDragStart(e, { task, id, column })}
