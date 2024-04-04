@@ -1,7 +1,7 @@
 import Column from "./Column";
 import Delete from "./Delete";
 
-const TodoPage = () => {
+const TodoPage = ({ cards, setCards }) => {
   return (
     <article className="parent-div">
       <section className="board">
