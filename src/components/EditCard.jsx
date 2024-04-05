@@ -1,22 +1,32 @@
 import { useState, useContext } from "react";
 import DataContext from "../context/DataContext";
 
-const EditCard = ({ openModal, closeModal, onSave }) => {
+const EditCard = ({ task, openModal }) => {
   if (!openModal) return null;
-  const { text, setText } = useContext(DataContext);
-  const [editTask, setEditTask] = useState();
+  const { text, setText, cards, setCards, setOpenModal } =
+    useContext(DataContext);
+  const [editTask, setEditTask] = useState(task);
 
   const handleEdit = (e) => {
-    setText(e.target.value);
+    setEditTask({
+      ...editTask,
+      task: e.target.textContent, // Update task directly from innerText
+    });
   };
 
   const handleSave = () => {
-    onSave(editTask);
-    closeModal();
+    const editedCards = cards.map((task) =>
+      task.id === editTask.id ? editTask : task
+    );
+    setCards(editedCards);
+    handleClose();
+    console.log(task);
   };
 
+  const handleClose = () => setOpenModal(false);
+
   return (
-    <article onClick={closeModal} className="modal-overlay">
+    <article onClick={handleClose} className="modal-overlay">
       <section
         onClick={(e) => {
           e.stopPropagation();
@@ -24,17 +34,18 @@ const EditCard = ({ openModal, closeModal, onSave }) => {
         className="modal-container"
       >
         <form className="edit-card">
-          <button type="button" className="close" onClick={closeModal}>
+          <button type="button" className="close" onClick={handleClose}>
             X
           </button>
           <label htmlFor="edit-text">Edit text</label>
-          <textarea
-            type="text"
-            id="edit-text"
-            value={text}
-            onChange={handleEdit}
-            required
-          />
+          <div
+            suppressContentEditableWarning
+            contentEditable
+            onBlur={handleEdit}
+            className="editable-content"
+          >
+            {editTask.task}
+          </div>
           <button type="button" className="submit" onClick={handleSave}>
             Save
           </button>

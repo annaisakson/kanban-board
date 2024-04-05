@@ -11,6 +11,7 @@ const Column = ({
   cards,
   setCards,
   setOpenModal,
+  handleSelect,
 }) => {
   const [active, setActive] = useState(false);
 
@@ -134,6 +135,7 @@ const Column = ({
               {...c}
               handleDragStart={handleDragStart}
               setOpenModal={setOpenModal}
+              handleSelect={handleSelect}
             />
           );
         })}
