@@ -33,7 +33,7 @@ body {
   width: 30vw;
   margin: 0.5em;
   border-radius: 10px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .active-column {
@@ -60,7 +60,7 @@ body {
 
 .drop {
   margin-top: 1px;
-  height: 1px;
+  height: 2px;
   width: auto;
   background-color: violet;
   opacity: 0;
@@ -68,7 +68,7 @@ body {
 
 .active-drop {
   margin-top: 1px;
-  height: 1px;
+  height: 2px;
   width: auto;
   background-color: violet;
   opacity: 1;

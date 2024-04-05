@@ -1,8 +1,7 @@
-import EditCard from "./components/EditCard";
 import Board from "./components/Board";
-import DoingPage from "./components/DoingPage";
-import DonePage from "./components/DonePage";
-import TodoPage from "./components/TodoPage";
+import DoingPage from "./pages/DoingPage";
+import DonePage from "./pages/DonePage";
+import TodoPage from "./pages/TodoPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext } from "react";
 import { DataProvider } from "./context/DataContext";

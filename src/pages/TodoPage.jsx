@@ -1,22 +1,22 @@
-import Column from "./Column";
-import Delete from "./Delete";
+import { Link } from "react-router-dom";
+import Column from "../components/Column";
+import Delete from "../components/Delete";
 import { RiArrowGoBackLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
 import DataContext from "../context/DataContext";
 import { useContext } from "react";
 
-const DoingPage = ({}) => {
+const TodoPage = ({}) => {
   const { cards, setCards } = useContext(DataContext);
   return (
     <article className="parent-div">
-      <NavLink to={"/"}>
+      <Link to={"/"}>
         <RiArrowGoBackLine />
-      </NavLink>
+      </Link>
       <section className="board">
         <Column
-          title="DOING"
-          column="Doing"
-          titleColor="yellow"
+          title="TODO"
+          column="ToDo"
+          titleColor="pink"
           cards={cards}
           setCards={setCards}
         />
@@ -26,4 +26,4 @@ const DoingPage = ({}) => {
   );
 };
 
-export default DoingPage;
+export default TodoPage;

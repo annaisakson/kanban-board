@@ -2,7 +2,7 @@ import Card from "./Card";
 import AddNew from "./AddNew";
 import DropIndicator from "./DropIndicator";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Column = ({
   title,
@@ -124,9 +124,9 @@ const Column = ({
       onDrop={handleDragEnd}
     >
       <div className="container">
-        <NavLink to={title}>
+        <Link to={title}>
           <h3 style={{ color: titleColor }}>{title}</h3>
-        </NavLink>
+        </Link>
         {filteredCards.map((c) => {
           return (
             <Card
