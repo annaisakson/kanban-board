@@ -1,9 +1,12 @@
+// import components
 import Card from "./Card";
 import AddNew from "./AddNew";
 import DropIndicator from "./DropIndicator";
+// other imports
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// component that handles the moving of cards between columns
 const Column = ({
   title,
   column,
@@ -31,10 +34,10 @@ const Column = ({
     const { element } = getNearestIndicator(e, indicators);
 
     const before = element.dataset.before || "-1";
-
+    // make a copy of the card array
     if (before !== cardId) {
       let copy = [...cards];
-
+      // find card thats being moved
       let cardToTransfer = copy.find((c) => c.id === cardId);
       if (!cardToTransfer) return;
       cardToTransfer = { ...cardToTransfer, column };
@@ -72,7 +75,7 @@ const Column = ({
     });
   };
 
-  // show where to place the card
+  // show where to place the card with an indicator
   const highlight = (e) => {
     const indicators = getHighlight();
     clearHighlights(indicators);
@@ -80,7 +83,7 @@ const Column = ({
     element.element.style.opacity = "1";
   };
 
-  // function to the exact indicator highlighted
+  // function to get the exact indicator highlighted
   const getNearestIndicator = (e, indicators) => {
     const distanceOffset = 50;
 

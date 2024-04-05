@@ -17,6 +17,7 @@ body {
   align-items: center;
 }
 
+/* BOARD */
 .board-title {
   color: #333;
 }
@@ -27,6 +28,7 @@ body {
   align-items: center;
 }
 
+/* COLUMNS */
 .column {
   background-color: #82828250;
   height: 80vh;
@@ -73,6 +75,8 @@ body {
   background-color: violet;
   opacity: 1;
 }
+
+/* TRASHCAN */
 
 .delete {
   background-color: #828282;

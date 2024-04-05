@@ -1,6 +1,8 @@
+// import components
 import Column from "./Column";
 import Delete from "./Delete";
 import EditCard from "./EditCard";
+// other imports
 import DataContext from "../context/DataContext";
 import { useContext, useState } from "react";
 
@@ -8,14 +10,15 @@ const Board = ({}) => {
   const { cards, setCards, setOpenModal, openModal } = useContext(DataContext);
   const [selectedTask, setSelectedTask] = useState(null);
 
+  // handle which card is being clicked
   const handleSelect = (cardId) => {
     const newSelectedTask = cards.find((card) => card.id === cardId);
     setSelectedTask(newSelectedTask);
     setOpenModal(true);
-    console.log(cardId);
   };
 
   return (
+    // render three different columns, trashbin and the edit modal
     <article className="parent-div">
       <section className="board">
         <Column

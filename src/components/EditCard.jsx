@@ -1,19 +1,21 @@
 import { useState, useContext } from "react";
 import DataContext from "../context/DataContext";
 
+// component for the modal to edit the card
 const EditCard = ({ task, openModal }) => {
   if (!openModal) return null;
-  const { text, setText, cards, setCards, setOpenModal } =
-    useContext(DataContext);
+  const { cards, setCards, setOpenModal } = useContext(DataContext);
   const [editTask, setEditTask] = useState(task);
 
+  // handle editing the text in the modal by chaning the textcontent in the div
   const handleEdit = (e) => {
     setEditTask({
       ...editTask,
-      task: e.target.textContent, // Update task directly from innerText
+      task: e.target.textContent,
     });
   };
 
+  // handle saving the edit by updating the card and closing the modal
   const handleSave = () => {
     const editedCards = cards.map((task) =>
       task.id === editTask.id ? editTask : task
@@ -23,6 +25,7 @@ const EditCard = ({ task, openModal }) => {
     console.log(task);
   };
 
+  // handle closing the modal
   const handleClose = () => setOpenModal(false);
 
   return (

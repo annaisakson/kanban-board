@@ -1,10 +1,13 @@
+// import components
 import Column from "../components/Column";
 import Delete from "../components/Delete";
+// other imports
+import DataContext from "../context/DataContext";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import DataContext from "../context/DataContext";
 import { useContext } from "react";
 
+// the page you get to if you click on the column title
 const DoingPage = ({}) => {
   const { cards, setCards } = useContext(DataContext);
   return (

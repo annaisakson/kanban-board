@@ -3,13 +3,16 @@ import { format } from "date-fns";
 import DataContext from "../context/DataContext";
 import { useContext } from "react";
 
+// add new card
 const AddNew = ({ column, setCards }) => {
   const { text, setText } = useContext(DataContext);
   const [adding, setAdding] = useState(false);
 
+  // function for when you press the add button
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // get the date and make a new object with date and text
     if (!text.trim().length) return;
     const datetime = format(new Date(), "MMMM dd, yyyy - HH:m");
 
@@ -19,10 +22,11 @@ const AddNew = ({ column, setCards }) => {
       id: Math.random().toString(),
       datetime,
     };
-
+    // add the new card to the array
     setCards((cards) => [...cards, newCard]);
     setAdding(false);
     {
+      // clear input field
       document.getElementById("add-input").value = "";
     }
   };
