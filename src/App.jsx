@@ -3,7 +3,6 @@ import Board from "./components/Board";
 import DoingPage from "./pages/DoingPage";
 import DonePage from "./pages/DonePage";
 import TodoPage from "./pages/TodoPage";
-import EditCard from "./components/EditCard";
 
 // other imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
