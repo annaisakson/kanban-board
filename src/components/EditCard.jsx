@@ -40,7 +40,9 @@ const EditCard = ({ task, openModal }) => {
           <button type="button" className="close" onClick={handleClose}>
             X
           </button>
-          <label htmlFor="edit-text">Edit text</label>
+          <label htmlFor="edit-text" className="edit-title">
+            Edit text:
+          </label>
           <div
             suppressContentEditableWarning
             contentEditable

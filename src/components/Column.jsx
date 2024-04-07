@@ -144,8 +144,8 @@ const Column = ({
             />
           );
         })}
-        {column === "ToDo" && <AddNew column={column} setCards={setCards} />}
         <DropIndicator beforeId="null" column={column} />
+        {column === "ToDo" && <AddNew column={column} setCards={setCards} />}
       </div>
     </section>
   );
