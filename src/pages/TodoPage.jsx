@@ -12,7 +12,7 @@ const TodoPage = ({}) => {
   const { cards, setCards } = useContext(DataContext);
   return (
     <article className="parent-div">
-      <Link to={"/"}>
+      <Link to={"/"} className="link">
         <RiArrowGoBackLine />
       </Link>
       <section className="board">

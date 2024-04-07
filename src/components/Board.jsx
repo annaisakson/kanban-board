@@ -24,7 +24,7 @@ const Board = ({}) => {
         <Column
           title="TODO"
           column="ToDo"
-          titleColor="pink"
+          titleColor="#e6a9b8"
           cards={cards}
           setCards={setCards}
           setOpenModal={setOpenModal}
@@ -33,7 +33,7 @@ const Board = ({}) => {
         <Column
           title="DOING"
           column="Doing"
-          titleColor="yellow"
+          titleColor="rgb(253, 253, 105)"
           cards={cards}
           setCards={setCards}
           setOpenModal={setOpenModal}
@@ -42,7 +42,7 @@ const Board = ({}) => {
         <Column
           title="DONE"
           column="Done"
-          titleColor="green"
+          titleColor="#7bc57b"
           cards={cards}
           setCards={setCards}
           setOpenModal={setOpenModal}

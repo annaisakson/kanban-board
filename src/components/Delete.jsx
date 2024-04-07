@@ -34,7 +34,11 @@ const Delete = ({ setCards }) => {
         onDragLeave={handleDragLeave}
         className={`${!active ? "delete" : "active-delete"}`}
       >
-        {!active ? <FaTrashCan /> : <BsFillTrash2Fill />}
+        {!active ? (
+          <FaTrashCan className="trash" />
+        ) : (
+          <BsFillTrash2Fill className="trash-open" />
+        )}
       </section>
     </>
   );

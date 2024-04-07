@@ -14,7 +14,7 @@ const AddNew = ({ column, setCards }) => {
 
     // get the date and make a new object with date and text
     if (!text.trim().length) return;
-    const datetime = format(new Date(), "MMMM dd, yyyy - HH:m");
+    const datetime = format(new Date(), "dd MMMM, yyyy - HH:mm");
 
     const newCard = {
       column,
@@ -33,21 +33,19 @@ const AddNew = ({ column, setCards }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="add-form" onSubmit={handleSubmit}>
         <input
           id="add-input"
           type="text"
           className="add-input"
-          placeholder="+"
+          placeholder="+ . . ."
           onChange={(e) => setText(e.target.value)}
           onClick={() => setAdding(true)}
         ></input>
         {adding && (
-          <div className="button-container">
-            <button type="submit" className="add-button">
-              Add
-            </button>
-          </div>
+          <button type="submit" className="add-button">
+            Add
+          </button>
         )}
       </form>
     </>

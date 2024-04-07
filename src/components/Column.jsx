@@ -128,8 +128,10 @@ const Column = ({
       onDrop={handleDragEnd}
     >
       <div className="container">
-        <Link to={title}>
-          <h3 style={{ color: titleColor }}>{title}</h3>
+        <Link to={title} className="title">
+          <h3 style={{ color: titleColor }} className="title">
+            <span>{title}</span>
+          </h3>
         </Link>
         {filteredCards.map((c) => {
           return (
