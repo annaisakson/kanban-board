@@ -7,7 +7,7 @@ const EditCard = ({ task, openModal }) => {
   const { cards, setCards, setOpenModal } = useContext(DataContext);
   const [editTask, setEditTask] = useState(task);
 
-  // handle editing the text in the modal by chaning the textcontent in the div
+  // handle editing the text in the modal by changing the textcontent in the div
   const handleEdit = (e) => {
     setEditTask({
       ...editTask,

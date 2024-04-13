@@ -7,7 +7,6 @@ import TodoPage from "./pages/TodoPage";
 // other imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext } from "react";
-
 import DataContext from "./context/DataContext";
 
 function App() {
