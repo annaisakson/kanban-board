@@ -19,7 +19,7 @@ const Board = ({}) => {
 
   return (
     // render three different columns, trashbin and the edit modal
-    <article className="parent-div">
+    <main className="parent-div">
       <section className="board">
         <Column
           title="TODO"
@@ -55,7 +55,7 @@ const Board = ({}) => {
         closeModal={() => setOpenModal(false)}
         task={selectedTask}
       />
-    </article>
+    </main>
   );
 };
 

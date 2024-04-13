@@ -7,7 +7,7 @@ import TodoPage from "./pages/TodoPage";
 // other imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useContext } from "react";
-import { DataProvider } from "./context/DataContext";
+
 import DataContext from "./context/DataContext";
 
 function App() {
@@ -16,34 +16,32 @@ function App() {
 
   return (
     <>
-      <DataProvider>
-        <Router>
-          <Routes>
-            <Route
-              index
-              element={
-                <Board
-                  cards={cards}
-                  setCards={setCards}
-                  setOpenModal={setOpenModal}
-                />
-              }
-            />
-            <Route
-              path="/todo"
-              element={<TodoPage cards={cards} setCards={setCards} />}
-            />
-            <Route
-              path="/doing"
-              element={<DoingPage cards={cards} setCards={setCards} />}
-            />
-            <Route
-              path="/done"
-              element={<DonePage cards={cards} setCards={setCards} />}
-            />
-          </Routes>
-        </Router>
-      </DataProvider>
+      <Router>
+        <Routes>
+          <Route
+            index
+            element={
+              <Board
+                cards={cards}
+                setCards={setCards}
+                setOpenModal={setOpenModal}
+              />
+            }
+          />
+          <Route
+            path="/todo"
+            element={<TodoPage cards={cards} setCards={setCards} />}
+          />
+          <Route
+            path="/doing"
+            element={<DoingPage cards={cards} setCards={setCards} />}
+          />
+          <Route
+            path="/done"
+            element={<DonePage cards={cards} setCards={setCards} />}
+          />
+        </Routes>
+      </Router>
     </>
   );
 }

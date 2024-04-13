@@ -36,7 +36,7 @@ const EditCard = ({ task, openModal }) => {
         }}
         className="modal-container"
       >
-        <form className="edit-card">
+        <section className="edit-card">
           <button type="button" className="close" onClick={handleClose}>
             X
           </button>
@@ -54,7 +54,7 @@ const EditCard = ({ task, openModal }) => {
           <button type="button" className="submit" onClick={handleSave}>
             Save
           </button>
-        </form>
+        </section>
       </section>
     </article>
   );
